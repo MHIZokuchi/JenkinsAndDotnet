@@ -14,13 +14,12 @@ jobs:
       - run:
           name: Build
           command: dotnet build -c Release
-          working_directory: Asp.netCoreMVCCRUD
+          working_directory: Asp.netCoreMVCCRUD    
       
       - run:
           name: Build and push Docker image
           command: |
-            docker build -t MyProject .
+            docker build --tag registry.heroku.com/dotnet-core-crud-app/web .
             docker login -u nneka234 --password-Okwuchi12345
-            docker tag registry.heroku.com/dotnet-core-crud-app/web
             heroku container:push web -a registry.heroku.com/dotnet-core-crud-app/web
             heroku container:release web -a registry.heroku.com/dotnet-core-crud-app/web
