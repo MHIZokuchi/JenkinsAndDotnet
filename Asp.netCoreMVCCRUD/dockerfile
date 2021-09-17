@@ -18,4 +18,4 @@ RUN dotnet publish "Asp.netCoreMVCCRUD.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Asp.netCoreMVCCRUD.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet Asp.netCoreMVCCRUD.dll
