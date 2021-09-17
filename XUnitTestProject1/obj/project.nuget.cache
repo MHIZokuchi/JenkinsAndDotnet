@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kULCWq4p0Ocr50sIv8wD87yPB6pmegUkNZUUWmBoF/MlvAOj2HDeNc5kPBuF1kRLnlR5FuNRDW+3YSjVnbS8iw==",
+  "dgSpecHash": "T5eP6MJShmYYTTdkLtMdtt0AAIPiaUYHQ/7IbQD/1M8i48GV3t/vp50+1cQcLfRqmc3lf3JceT3tAse52+JjZQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\p7927\\source\\Asp.Net-Core-MVC-CRUD-with-EF-Core-master\\Asp.Net-Core-MVC-CRUD-with-EF-Core-master\\Asp.netCoreMVCCRUD\\XUnitTestProject1\\XUnitTestProject1.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\p7927\\.nuget\\packages\\microsoft.testplatform.objectmodel\\16.7.1\\microsoft.testplatform.objectmodel.16.7.1.nupkg.sha512",
     "C:\\Users\\p7927\\.nuget\\packages\\microsoft.testplatform.testhost\\16.7.1\\microsoft.testplatform.testhost.16.7.1.nupkg.sha512",
+    "C:\\Users\\p7927\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\p7927\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\2.2.0\\microsoft.visualstudio.web.codegeneration.2.2.0.nupkg.sha512",
     "C:\\Users\\p7927\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.contracts\\2.2.0\\microsoft.visualstudio.web.codegeneration.contracts.2.2.0.nupkg.sha512",
     "C:\\Users\\p7927\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\2.2.0\\microsoft.visualstudio.web.codegeneration.core.2.2.0.nupkg.sha512",
