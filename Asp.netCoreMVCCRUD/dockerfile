@@ -6,7 +6,7 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY Asp.netCoreMVCCRUD/Asp.netCoreMVCCRUD.csproj, Asp.netCoreMVCCRUD/
+COPY Asp.netCoreMVCCRUD.csproj, Asp.netCoreMVCCRUD/
 RUN dotnet restore "Asp.netCoreMVCCRUD/Asp.netCoreMVCCRUD.csproj"
 COPY . .
 WORKDIR "/src/Asp.netCoreMVCCRUD"
