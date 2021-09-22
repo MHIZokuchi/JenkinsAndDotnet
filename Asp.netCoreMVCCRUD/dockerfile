@@ -6,9 +6,10 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
+COPY . .
 COPY Asp.netCoreMVCCRUD.csproj, Asp.netCoreMVCCRUD/
 RUN dotnet restore "Asp.netCoreMVCCRUD/Asp.netCoreMVCCRUD.csproj"
-COPY . .
+
 WORKDIR "/src/Asp.netCoreMVCCRUD"
 RUN dotnet build "Asp.netCoreMVCCRUD.csproj" -c Release -o /app/build
 
