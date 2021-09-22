@@ -16,13 +16,11 @@ jobs:
       - run:
           name: Restore
           command: dotnet restore
-          working_directory: Asp.netCoreMVCCRUD
-          
+          working_directory: Asp.netCoreMVCCRUD          
       - run:
           name: Build
           command: dotnet build -c Release
           working_directory: Asp.netCoreMVCCRUD   
-
       - run:
           name: Build and push Docker image
           command: |
