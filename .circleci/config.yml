@@ -6,7 +6,12 @@ jobs:
     docker:
       - image: jetcipher/circleci-dotnet-core:2.2
     steps:
+      - setup_remote_docker:
+          docker_layer_caching: false
+          version: 19.03.14
+          
       - checkout
+         
       - run:
           name: Restore
           command: dotnet restore
@@ -14,8 +19,8 @@ jobs:
       - run:
           name: Build
           command: dotnet build -c Release
-          working_directory: Asp.netCoreMVCCRUD    
-      
+          working_directory: Asp.netCoreMVCCRUD   
+
       - run:
           name: Build and push Docker image
           command: |
