@@ -16,6 +16,7 @@ jobs:
           name: Restore
           command: dotnet restore
           working_directory: Asp.netCoreMVCCRUD
+          
       - run:
           name: Build
           command: dotnet build -c Release
