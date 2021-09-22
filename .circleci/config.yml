@@ -6,7 +6,12 @@ jobs:
     docker:
       - image: jetcipher/circleci-dotnet-core:2.2
     steps:
+      - setup_remote_docker:
+          docker_layer_caching: false
+          version: 19.03.14
+                    
       - checkout
+         
       - run:
           name: Restore
           command: dotnet restore
@@ -14,18 +19,12 @@ jobs:
       - run:
           name: Build
           command: dotnet build -c Release
-          working_directory: Asp.netCoreMVCCRUD
-      - run:
-          name: Running Tests
-          command: dotnet test
-          working_directory: XUnitTestProject1
-      - setup_remote_docker:
-          docker_layer_caching: true
+          working_directory: Asp.netCoreMVCCRUD   
+
       - run:
           name: Build and push Docker image
           command: |
-            docker build -t MyProject .
+            docker build --tag registry.heroku.com/dotnet-core-crud-app/web Asp.netCoreMVCCRUD
             docker login -u nneka234 --password-Okwuchi12345
-            docker tag registry.heroku.com/dotnet-core-crud-app/web
             heroku container:push web -a registry.heroku.com/dotnet-core-crud-app/web
             heroku container:release web -a registry.heroku.com/dotnet-core-crud-app/web
