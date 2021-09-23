@@ -12,19 +12,19 @@ jobs:
                     
       - checkout
          
-         
       - run:
           name: Restore
           command: dotnet restore
-          working_directory: Asp.netCoreMVCCRUD          
+          working_directory: Asp.netCoreMVCCRUD
       - run:
           name: Build
           command: dotnet build -c Release
           working_directory: Asp.netCoreMVCCRUD   
+
       - run:
           name: Build and push Docker image
           command: |
-            docker build --tag registry.heroku.com/dotnet-core-crud-app/web /app
+            docker build --tag registry.heroku.com/dotnet-core-crud-app/web Asp.netCoreMVCCRUD
             docker login -u nneka234 --password-Okwuchi12345
             heroku container:push web -a registry.heroku.com/dotnet-core-crud-app/web
             heroku container:release web -a registry.heroku.com/dotnet-core-crud-app/web
