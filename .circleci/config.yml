@@ -21,10 +21,11 @@ jobs:
           command: dotnet build -c Release
           working_directory: Asp.netCoreMVCCRUD   
 
-      - run:
+     - run:
           name: Build and push Docker image
           command: |
             docker build --tag registry.heroku.com/dotnet-core-crud-app/web Asp.netCoreMVCCRUD
-            docker login -u nneka234 --password-stdin Okwuchi12345
-            heroku container:push web -a registry.heroku.com/dotnet-core-crud-app/web
-            heroku container:release web -a registry.heroku.com/dotnet-core-crud-app/web
+            sudo curl https://cli-assets.heroku.com/install.sh | sh
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push web -a registry.heroku.com/dotnet-core-crud-app/web
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release web -a registry.heroku.com/dotnet-core-crud-app/web
