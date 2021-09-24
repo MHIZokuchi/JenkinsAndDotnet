@@ -25,8 +25,9 @@ jobs:
           name: Build and push Docker image
           command: |
             docker build --tag registry.heroku.com/dotnet-core-crud-app/web Asp.netCoreMVCCRUD
+            echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
+            docker push registry.heroku.com/dotnet-core-crud-app/web
             sudo curl https://cli-assets.heroku.com/install.sh | sh
             HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
-            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push --app dotnet-core-crud-app web
             HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release --app dotnet-core-crud-app web
            
